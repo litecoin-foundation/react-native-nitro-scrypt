@@ -24,7 +24,7 @@
   HybridObjectRegistry::registerHybridObjectConstructor(
     "Scrypt",
     []() -> std::shared_ptr<HybridObject> {
-      std::shared_ptr<margelo::nitro::TurboScrypt::HybridScryptSpec> hybridObject = TurboScryptiOS::TurboScryptiOSAutolinking::createScrypt();
+      std::shared_ptr<HybridScryptSpec> hybridObject = TurboScryptiOS::TurboScryptiOSAutolinking::createScrypt();
       return hybridObject;
     }
   );

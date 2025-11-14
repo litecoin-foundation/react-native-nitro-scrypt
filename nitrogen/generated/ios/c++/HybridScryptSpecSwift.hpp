@@ -12,8 +12,6 @@
 // Forward declaration of `HybridScryptSpec_cxx` to properly resolve imports.
 namespace TurboScryptiOS { class HybridScryptSpec_cxx; }
 
-// Forward declaration of `ArrayBuffer` to properly resolve imports.
-namespace NitroModules { class ArrayBuffer; }
 // Forward declaration of `ArrayBufferHolder` to properly resolve imports.
 namespace NitroModules { class ArrayBufferHolder; }
 
@@ -43,12 +41,19 @@ namespace margelo::nitro::TurboScrypt {
 
   public:
     // Get the Swift part
-    inline TurboScryptiOS::HybridScryptSpec_cxx getSwiftPart() noexcept { return _swiftPart; }
+    inline TurboScryptiOS::HybridScryptSpec_cxx& getSwiftPart() noexcept {
+      return _swiftPart;
+    }
 
   public:
-    // Get memory pressure
     inline size_t getExternalMemorySize() noexcept override {
       return _swiftPart.getMemorySize();
+    }
+    void dispose() noexcept override {
+      _swiftPart.dispose();
+    }
+    std::string toString() override {
+      return _swiftPart.toString();
     }
 
   public:

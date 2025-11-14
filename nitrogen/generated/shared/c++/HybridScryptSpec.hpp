@@ -13,8 +13,7 @@
 #error NitroModules cannot be found! Are you sure you installed NitroModules properly?
 #endif
 
-// Forward declaration of `ArrayBuffer` to properly resolve imports.
-namespace NitroModules { class ArrayBuffer; }
+
 
 #include <NitroModules/ArrayBuffer.hpp>
 
@@ -41,7 +40,7 @@ namespace margelo::nitro::TurboScrypt {
       explicit HybridScryptSpec(): HybridObject(TAG) { }
 
       // Destructor
-      virtual ~HybridScryptSpec() { }
+      ~HybridScryptSpec() override = default;
 
     public:
       // Properties

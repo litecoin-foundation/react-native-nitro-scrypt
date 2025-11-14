@@ -8,8 +8,6 @@
 #pragma once
 
 // Forward declarations of C++ defined types
-// Forward declaration of `ArrayBuffer` to properly resolve imports.
-namespace NitroModules { class ArrayBuffer; }
 // Forward declaration of `HybridScryptSpec` to properly resolve imports.
 namespace margelo::nitro::TurboScrypt { class HybridScryptSpec; }
 
@@ -30,24 +28,24 @@ namespace TurboScryptiOS { class HybridScryptSpec_cxx; }
  */
 namespace margelo::nitro::TurboScrypt::bridge::swift {
 
-  // pragma MARK: std::shared_ptr<margelo::nitro::TurboScrypt::HybridScryptSpec>
+  // pragma MARK: std::shared_ptr<HybridScryptSpec>
   /**
-   * Specialized version of `std::shared_ptr<margelo::nitro::TurboScrypt::HybridScryptSpec>`.
+   * Specialized version of `std::shared_ptr<HybridScryptSpec>`.
    */
-  using std__shared_ptr_margelo__nitro__TurboScrypt__HybridScryptSpec_ = std::shared_ptr<margelo::nitro::TurboScrypt::HybridScryptSpec>;
-  std::shared_ptr<margelo::nitro::TurboScrypt::HybridScryptSpec> create_std__shared_ptr_margelo__nitro__TurboScrypt__HybridScryptSpec_(void* _Nonnull swiftUnsafePointer);
-  void* _Nonnull get_std__shared_ptr_margelo__nitro__TurboScrypt__HybridScryptSpec_(std__shared_ptr_margelo__nitro__TurboScrypt__HybridScryptSpec_ cppType);
+  using std__shared_ptr_HybridScryptSpec_ = std::shared_ptr<HybridScryptSpec>;
+  std::shared_ptr<HybridScryptSpec> create_std__shared_ptr_HybridScryptSpec_(void* NON_NULL swiftUnsafePointer) noexcept;
+  void* NON_NULL get_std__shared_ptr_HybridScryptSpec_(std__shared_ptr_HybridScryptSpec_ cppType);
   
-  // pragma MARK: std::weak_ptr<margelo::nitro::TurboScrypt::HybridScryptSpec>
-  using std__weak_ptr_margelo__nitro__TurboScrypt__HybridScryptSpec_ = std::weak_ptr<margelo::nitro::TurboScrypt::HybridScryptSpec>;
-  inline std__weak_ptr_margelo__nitro__TurboScrypt__HybridScryptSpec_ weakify_std__shared_ptr_margelo__nitro__TurboScrypt__HybridScryptSpec_(const std::shared_ptr<margelo::nitro::TurboScrypt::HybridScryptSpec>& strong) { return strong; }
+  // pragma MARK: std::weak_ptr<HybridScryptSpec>
+  using std__weak_ptr_HybridScryptSpec_ = std::weak_ptr<HybridScryptSpec>;
+  inline std__weak_ptr_HybridScryptSpec_ weakify_std__shared_ptr_HybridScryptSpec_(const std::shared_ptr<HybridScryptSpec>& strong) noexcept { return strong; }
   
   // pragma MARK: Result<std::shared_ptr<ArrayBuffer>>
   using Result_std__shared_ptr_ArrayBuffer__ = Result<std::shared_ptr<ArrayBuffer>>;
-  inline Result_std__shared_ptr_ArrayBuffer__ create_Result_std__shared_ptr_ArrayBuffer__(const std::shared_ptr<ArrayBuffer>& value) {
+  inline Result_std__shared_ptr_ArrayBuffer__ create_Result_std__shared_ptr_ArrayBuffer__(const std::shared_ptr<ArrayBuffer>& value) noexcept {
     return Result<std::shared_ptr<ArrayBuffer>>::withValue(value);
   }
-  inline Result_std__shared_ptr_ArrayBuffer__ create_Result_std__shared_ptr_ArrayBuffer__(const std::exception_ptr& error) {
+  inline Result_std__shared_ptr_ArrayBuffer__ create_Result_std__shared_ptr_ArrayBuffer__(const std::exception_ptr& error) noexcept {
     return Result<std::shared_ptr<ArrayBuffer>>::withError(error);
   }
 

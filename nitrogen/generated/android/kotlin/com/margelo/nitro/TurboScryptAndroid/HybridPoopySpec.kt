@@ -7,11 +7,11 @@
 
 package com.margelo.nitro.TurboScryptAndroid
 
-import android.util.Log
 import androidx.annotation.Keep
 import com.facebook.jni.HybridData
 import com.facebook.proguard.annotations.DoNotStrip
-import com.margelo.nitro.core.*
+import com.margelo.nitro.core.ArrayBuffer
+import com.margelo.nitro.core.HybridObject
 
 /**
  * A Kotlin class representing the Poopy HybridObject.
@@ -29,16 +29,17 @@ abstract class HybridPoopySpec: HybridObject() {
   private var mHybridData: HybridData = initHybrid()
 
   init {
-    // Pass this `HybridData` through to it's base class,
-    // to represent inheritance to JHybridObject on C++ side
     super.updateNative(mHybridData)
   }
 
-  /**
-   * Call from a child class to initialize HybridData with a child.
-   */
   override fun updateNative(hybridData: HybridData) {
     mHybridData = hybridData
+    super.updateNative(hybridData)
+  }
+
+  // Default implementation of `HybridObject.toString()`
+  override fun toString(): String {
+    return "[HybridObject Poopy]"
   }
 
   // Properties
@@ -52,17 +53,6 @@ abstract class HybridPoopySpec: HybridObject() {
   private external fun initHybrid(): HybridData
 
   companion object {
-    private const val TAG = "HybridPoopySpec"
-    init {
-      try {
-        Log.i(TAG, "Loading TurboScryptCxxLib C++ library...")
-        System.loadLibrary("TurboScryptCxxLib")
-        Log.i(TAG, "Successfully loaded TurboScryptCxxLib C++ library!")
-      } catch (e: Error) {
-        Log.e(TAG, "Failed to load TurboScryptCxxLib C++ library! Is it properly installed and linked? " +
-                    "Is the name correct? (see `CMakeLists.txt`, at `add_library(...)`)", e)
-        throw e
-      }
-    }
+    protected const val TAG = "HybridPoopySpec"
   }
 }

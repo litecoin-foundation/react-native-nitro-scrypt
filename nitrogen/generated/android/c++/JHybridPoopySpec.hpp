@@ -29,16 +29,19 @@ namespace margelo::nitro::TurboScrypt {
     // C++ constructor (called from Java via `initHybrid()`)
     explicit JHybridPoopySpec(jni::alias_ref<jhybridobject> jThis) :
       HybridObject(HybridPoopySpec::TAG),
+      HybridBase(jThis),
       _javaPart(jni::make_global(jThis)) {}
 
   public:
-    virtual ~JHybridPoopySpec() {
+    ~JHybridPoopySpec() override {
       // Hermes GC can destroy JS objects on a non-JNI Thread.
       jni::ThreadScope::WithClassLoader([&] { _javaPart.reset(); });
     }
 
   public:
     size_t getExternalMemorySize() noexcept override;
+    void dispose() noexcept override;
+    std::string toString() override;
 
   public:
     inline const jni::global_ref<JHybridPoopySpec::javaobject>& getJavaPart() const noexcept {

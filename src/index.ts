@@ -18,7 +18,7 @@ export const Scrypt = {
     })
 
     if (!openNative) {
-      throw new Error('react-native-turbo-scrypt not support on this platform')
+      throw new Error('react-native-nitro-scrypt not support on this platform')
     }
 
     const res = openNative()

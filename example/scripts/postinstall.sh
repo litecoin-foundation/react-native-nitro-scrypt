@@ -1,8 +1,8 @@
 #!/bin/bash
 
 folders=(
-  "./node_modules/react-native-turbo-scrypt/example"
-  "./node_modules/react-native-turbo-scrypt/node_modules"
+  "./node_modules/react-native-nitro-scrypt/example"
+  "./node_modules/react-native-nitro-scrypt/node_modules"
 )
 
 for folder in "${folders[@]}"; do

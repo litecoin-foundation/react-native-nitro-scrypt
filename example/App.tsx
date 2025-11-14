@@ -1,35 +1,35 @@
-import React, {useState} from 'react';
-import {Button, SafeAreaView, StyleSheet, Text, View} from 'react-native';
+import React, {useState} from 'react'
+import {Button, SafeAreaView, StyleSheet, Text, View} from 'react-native'
 
-import {Scrypt} from 'react-native-turbo-scrypt';
+import {Scrypt} from 'react-native-nitro-scrypt'
 
-const SCRYPT_N = 32768;
-const SCRYPT_R = 8;
-const SCRYPT_P = 1;
-const SCRYPT_KEY_LENGTH = 32;
+const SCRYPT_N = 32768
+const SCRYPT_R = 8
+const SCRYPT_P = 1
+const SCRYPT_KEY_LENGTH = 32
 
 function buf2hex(buffer: ArrayBuffer) {
   return [...new Uint8Array(buffer)]
     .map(x => x.toString(16).padStart(2, '0'))
-    .join('');
+    .join('')
 }
 
 function App(): React.JSX.Element {
   const onPress = async () => {
-    const passwordString = 'aezeed';
-    const passwordBuffer = new TextEncoder().encode(passwordString).buffer;
+    const passwordString = 'aezeed'
+    const passwordBuffer = new TextEncoder().encode(passwordString).buffer
 
-    const saltBuffer = new ArrayBuffer(4);
-    const saltView = new Uint8Array(saltBuffer);
-    saltView.set([0x04, 0x08, 0x0c, 0x10]);
+    const saltBuffer = new ArrayBuffer(4)
+    const saltView = new Uint8Array(saltBuffer)
+    saltView.set([0x04, 0x08, 0x0c, 0x10])
 
-    console.log(passwordString);
-    console.log(saltBuffer.byteLength);
-    console.log(passwordBuffer.byteLength);
+    console.log(passwordString)
+    console.log(saltBuffer.byteLength)
+    console.log(passwordBuffer.byteLength)
 
-    updateTimeTaken(0);
+    updateTimeTaken(0)
 
-    const t0 = performance.now();
+    const t0 = performance.now()
     const key = Scrypt.scrypt(
       passwordBuffer,
       saltBuffer,
@@ -37,14 +37,14 @@ function App(): React.JSX.Element {
       SCRYPT_R,
       SCRYPT_P,
       SCRYPT_KEY_LENGTH,
-    );
-    updateHex(buf2hex(key));
-    const t1 = performance.now();
-    updateTimeTaken(t1 - t0);
-  };
+    )
+    updateHex(buf2hex(key))
+    const t1 = performance.now()
+    updateTimeTaken(t1 - t0)
+  }
 
-  const [scryptHex, updateHex] = useState('');
-  const [timeTaken, updateTimeTaken] = useState(0);
+  const [scryptHex, updateHex] = useState('')
+  const [timeTaken, updateTimeTaken] = useState(0)
 
   return (
     <SafeAreaView style={styles.container}>
@@ -58,7 +58,7 @@ function App(): React.JSX.Element {
         <Text>Time Taken: {String(timeTaken.toFixed(2))}ms</Text>
       )}
     </SafeAreaView>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
@@ -76,6 +76,6 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     marginBottom: 30,
   },
-});
+})
 
-export default App;
+export default App

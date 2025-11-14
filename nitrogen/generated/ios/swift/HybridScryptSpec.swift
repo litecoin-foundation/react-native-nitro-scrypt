@@ -7,19 +7,28 @@
 
 import Foundation
 import NitroModules
+import NitroModules
 
 /// See ``HybridScryptSpec``
-public protocol HybridScryptSpec_protocol: AnyObject {
+public protocol HybridScryptSpec_protocol: HybridObject {
   // Properties
   
 
   // Methods
-  func scrypt(password: ArrayBufferHolder, salt: ArrayBufferHolder, N: Double, r: Double, p: Double, size: Double) throws -> ArrayBufferHolder
+  func scrypt(password: ArrayBuffer, salt: ArrayBuffer, N: Double, r: Double, p: Double, size: Double) throws -> ArrayBuffer
+}
+
+public extension HybridScryptSpec_protocol {
+  /// Default implementation of ``HybridObject.toString``
+  func toString() -> String {
+    return "[HybridObject Scrypt]"
+  }
 }
 
 /// See ``HybridScryptSpec``
-public class HybridScryptSpec_base: HybridObjectSpec {
+open class HybridScryptSpec_base {
   private weak var cxxWrapper: HybridScryptSpec_cxx? = nil
+  public init() { }
   public func getCxxWrapper() -> HybridScryptSpec_cxx {
   #if DEBUG
     guard self is HybridScryptSpec else {
@@ -34,7 +43,6 @@ public class HybridScryptSpec_base: HybridObjectSpec {
       return cxxWrapper
     }
   }
-  public var memorySize: Int { return 0 }
 }
 
 /**

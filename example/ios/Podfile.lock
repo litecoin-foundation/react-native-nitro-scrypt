@@ -8,7 +8,7 @@ PODS:
   - hermes-engine (0.76.3):
     - hermes-engine/Pre-built (= 0.76.3)
   - hermes-engine/Pre-built (0.76.3)
-  - NitroModules (0.24.0):
+  - NitroModules (0.31.6):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -1555,7 +1555,7 @@ PODS:
     - React-perflogger (= 0.76.3)
     - React-utils (= 0.76.3)
   - SocketRocket (0.7.1)
-  - TurboScryptiOS (0.0.6):
+  - TurboScryptiOS (0.1.0):
     - CryptoSwift
     - DoubleConversion
     - glog
@@ -1647,7 +1647,7 @@ DEPENDENCIES:
   - React-utils (from `../node_modules/react-native/ReactCommon/react/utils`)
   - ReactCodegen (from `build/generated/ios`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
-  - TurboScryptiOS (from `../node_modules/react-native-turbo-scrypt`)
+  - TurboScryptiOS (from `../node_modules/react-native-nitro-scrypt`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -1786,7 +1786,7 @@ EXTERNAL SOURCES:
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
   TurboScryptiOS:
-    :path: "../node_modules/react-native-turbo-scrypt"
+    :path: "../node_modules/react-native-nitro-scrypt"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -1798,7 +1798,7 @@ SPEC CHECKSUMS:
   fmt: 10c6e61f4be25dc963c36bd73fc7b1705fe975be
   glog: 08b301085f15bcbb6ff8632a8ebaf239aae04e6a
   hermes-engine: 0555a84ea495e8e3b4bde71b597cd87fbb382888
-  NitroModules: 0571752ee85bcf0b9ecd0d6a502f6b3dc93b7f66
+  NitroModules: 05d17336ebb2fe86841870d879f226a845daafce
   RCT-Folly: bf5c0376ffe4dd2cf438dcf86db385df9fdce648
   RCTDeprecation: 2c5e1000b04ab70b53956aa498bf7442c3c6e497
   RCTRequired: 5f785a001cf68a551c5f5040fb4c415672dbb481
@@ -1857,7 +1857,7 @@ SPEC CHECKSUMS:
   ReactCodegen: ae99a130606068ed40d1d9c0d5f25fda142a0647
   ReactCommon: 89c87b343deacc8610b099ac764848f0ce937e3e
   SocketRocket: d4aabe649be1e368d1318fdf28a022d714d65748
-  TurboScryptiOS: 8f163240da1fa9ec4d9f6ed67f24296d23d7583b
+  TurboScryptiOS: 632bbd9088939631aacb6f193937ba3ba844280c
   Yoga: 3deb2471faa9916c8a82dda2a22d3fba2620ad37
 
 PODFILE CHECKSUM: 71a689932e49f453bd6454dd189b45915dda66a0

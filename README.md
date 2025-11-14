@@ -1,4 +1,4 @@
-# react-native-turbo-scrypt
+# react-native-nitro-scrypt
 
 Fastest Scrypt library for React Native, supporting new architecture and using nitromodules for blazingly fast performance.
 
@@ -7,7 +7,7 @@ This library does not reimplement Scrypt, but instead simply binds Scrypt from [
 ## Usage
 
 ```tsx
-import {Scrypt} from 'react-native-turbo-scrypt';
+import {Scrypt} from 'react-native-nitro-scrypt';
 
 const passwordString = 'password';
 const passwordBuffer = new TextEncoder().encode(passwordString).buffer;
@@ -27,7 +27,7 @@ The result is a buffer.
 
 ## Installation
 ```bash
-$ bun i react-native-turbo-scrypt
+$ bun i react-native-nitro-scrypt
 ```
 
 ## Performance

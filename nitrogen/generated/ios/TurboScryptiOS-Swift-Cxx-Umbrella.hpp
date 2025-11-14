@@ -8,8 +8,6 @@
 #pragma once
 
 // Forward declarations of C++ defined types
-// Forward declaration of `ArrayBuffer` to properly resolve imports.
-namespace NitroModules { class ArrayBuffer; }
 // Forward declaration of `HybridScryptSpec` to properly resolve imports.
 namespace margelo::nitro::TurboScrypt { class HybridScryptSpec; }
 
@@ -25,9 +23,9 @@ namespace margelo::nitro::TurboScrypt { class HybridScryptSpec; }
 
 // Common C++ types used in Swift
 #include <NitroModules/ArrayBufferHolder.hpp>
-#include <NitroModules/AnyMapHolder.hpp>
-#include <NitroModules/HybridContext.hpp>
+#include <NitroModules/AnyMapUtils.hpp>
 #include <NitroModules/RuntimeError.hpp>
+#include <NitroModules/DateToChronoDate.hpp>
 
 // Forward declarations of Swift defined types
 // Forward declaration of `HybridScryptSpec_cxx` to properly resolve imports.

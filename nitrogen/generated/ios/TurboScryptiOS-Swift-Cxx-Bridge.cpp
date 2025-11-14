@@ -13,19 +13,19 @@
 
 namespace margelo::nitro::TurboScrypt::bridge::swift {
 
-  // pragma MARK: std::shared_ptr<margelo::nitro::TurboScrypt::HybridScryptSpec>
-  std::shared_ptr<margelo::nitro::TurboScrypt::HybridScryptSpec> create_std__shared_ptr_margelo__nitro__TurboScrypt__HybridScryptSpec_(void* _Nonnull swiftUnsafePointer) {
+  // pragma MARK: std::shared_ptr<HybridScryptSpec>
+  std::shared_ptr<HybridScryptSpec> create_std__shared_ptr_HybridScryptSpec_(void* NON_NULL swiftUnsafePointer) noexcept {
     TurboScryptiOS::HybridScryptSpec_cxx swiftPart = TurboScryptiOS::HybridScryptSpec_cxx::fromUnsafe(swiftUnsafePointer);
     return std::make_shared<margelo::nitro::TurboScrypt::HybridScryptSpecSwift>(swiftPart);
   }
-  void* _Nonnull get_std__shared_ptr_margelo__nitro__TurboScrypt__HybridScryptSpec_(std__shared_ptr_margelo__nitro__TurboScrypt__HybridScryptSpec_ cppType) {
+  void* NON_NULL get_std__shared_ptr_HybridScryptSpec_(std__shared_ptr_HybridScryptSpec_ cppType) {
     std::shared_ptr<margelo::nitro::TurboScrypt::HybridScryptSpecSwift> swiftWrapper = std::dynamic_pointer_cast<margelo::nitro::TurboScrypt::HybridScryptSpecSwift>(cppType);
-  #ifdef NITRO_DEBUG
+    #ifdef NITRO_DEBUG
     if (swiftWrapper == nullptr) [[unlikely]] {
       throw std::runtime_error("Class \"HybridScryptSpec\" is not implemented in Swift!");
     }
-  #endif
-    TurboScryptiOS::HybridScryptSpec_cxx swiftPart = swiftWrapper->getSwiftPart();
+    #endif
+    TurboScryptiOS::HybridScryptSpec_cxx& swiftPart = swiftWrapper->getSwiftPart();
     return swiftPart.toUnsafe();
   }
 
