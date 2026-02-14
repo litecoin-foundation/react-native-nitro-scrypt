@@ -21,6 +21,10 @@ include_directories(
 
 find_library(LOG_LIB log)
 
+# 16 KB page size alignment (required by Play Store for Android 15+)
+# https://developer.android.com/guide/practices/page-sizes#ndk-build
+target_link_options(${PACKAGE_NAME} PRIVATE "-Wl,-z,max-page-size=16384")
+
 # Link all libraries together
 target_link_libraries(
         ${PACKAGE_NAME}
