@@ -1,6 +1,6 @@
 {
   "name": "react-native-nitro-scrypt",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "⚡ fast Scrypt implementation for React Native via Nitromodules",
   "main": "lib/index",
   "module": "lib/index",

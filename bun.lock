@@ -1,5 +1,6 @@
 {
   "lockfileVersion": 1,
+  "configVersion": 0,
   "workspaces": {
     "": {
       "name": "react-native-nitro-scrypt",
@@ -20,7 +21,7 @@
       "peerDependencies": {
         "react": "*",
         "react-native": "*",
-        "react-native-nitro-modules": "*",
+        "react-native-nitro-modules": ">=0.31.6",
       },
     },
   },
